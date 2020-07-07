@@ -55,7 +55,7 @@ export default function MediaControlCard() {
 
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
-    fetch("http://localhost:5050/happy")
+    fetch("http://localhost:6060/happy")
       .then((response) => response.json())
       .then((songs) => setSongs(songs));
 
