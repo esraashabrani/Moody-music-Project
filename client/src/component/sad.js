@@ -77,7 +77,7 @@ export default function MediaControlCard() {
             </CardContent>
             <div className={classes.controls}>
               <ThemeProvider theme={muiTheme}>
-                <AudioPlayer src={ele.url} download={true} loop={true} />
+                <AudioPlayer src="https://play.anghami.com/song/66191233.mp3" download={true} loop={true} />
               </ThemeProvider>
             </div>
           </div>

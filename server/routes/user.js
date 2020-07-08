@@ -1,4 +1,5 @@
 const express = require('express');
+const request = require('request');
 const router = express.Router();
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
@@ -54,21 +55,29 @@ router.post("/login",function (req, res) {
       })
   });
 });
-//require songs model 
-// const sad = require('../models/songs');
-
-// router.get("/sad",function(req, res) {
-//   sad.find({},(err,songs) => { 
-//     if (err) {
-//       console.log(err)
-      
+// let getsongs = (callback) => {
+//   let options = {
+//     url: 'https://bus.anghami.com/public/search?query=sad&searchtype=song&page=0',
+//     headers: {
+//       'XAT': 'interns',
+//       'XATH': 'da061796b71ae2e09090a4e6'
 //     }
-//     console.log(songs)
-//     return res.json(songs)
+//   };
+//   request(options, function (error, response, body) {
+//     callback(body);
 //   });
-//   console.log("hello")
-//   // res.json("hello")
+// }
+
+// router.get("/mood",function (req, res) {
+//      getsongs((body) => {
+//       //console.log(body.results[0].id)
+//       var x = body.results;
+//       console.log(x)
+//        res.send(body)
+//      })
+     
 // });
+
 
 
 
