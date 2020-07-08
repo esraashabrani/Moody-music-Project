@@ -70,15 +70,15 @@ export default function Jazz() {
           <div className={classes.details}>
             <CardContent className={classes.content}>
               <Typography component="h5" variant="h5">
-                {ele.song}
+                {ele.title}
               </Typography>
               <Typography variant="subtitle1" color="textSecondary">
-                {ele.singer}
+                {ele.artist.name}
               </Typography>
             </CardContent>
             <div className={classes.controls}>
               <ThemeProvider theme={muiTheme}>
-                <AudioPlayer src={ele.url} download={true} loop={true} />
+                <AudioPlayer src={ele.preview} download={true} loop={true} />
               </ThemeProvider>
             </div>
           </div>

@@ -23,8 +23,6 @@ mongoose.connect("mongodb://localhost/moody",
   )
   mongoose.connection.on('connected', () => 
   console.log("MongoDB successfully connected"))
-
-
 // middleware
 app.use(
   bodyParser.urlencoded({

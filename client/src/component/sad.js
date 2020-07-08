@@ -58,7 +58,6 @@ export default function MediaControlCard() {
     fetch("http://localhost:6060/sad")
       .then((response) => response.json())
       .then((songs) => setSongs(songs));
-
       },[]);
  
 
@@ -69,15 +68,15 @@ export default function MediaControlCard() {
           <div className={classes.details}>
             <CardContent className={classes.content}>
               <Typography component="h5" variant="h5">
-                {ele.song}
+                {ele.title}
               </Typography>
               <Typography variant="subtitle1" color="textSecondary">
-                {ele.singer}
+                {ele.artist.name}
               </Typography>
             </CardContent>
             <div className={classes.controls}>
               <ThemeProvider theme={muiTheme}>
-                <AudioPlayer src="https://play.anghami.com/song/66191233.mp3" download={true} loop={true} />
+                <AudioPlayer src={ele.preview} download={true} loop={true} />
               </ThemeProvider>
             </div>
           </div>
