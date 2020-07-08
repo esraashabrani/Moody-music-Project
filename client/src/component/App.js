@@ -6,7 +6,7 @@ import Signup from "./signup";
 import Body from "./home";
 import About from "./aboutus";
 import Profile from "./profile";
-import form from "./form";
+import Product from "./product";
 // import Contact from "./contactus";
 import MediaControlCard from "./happy";
 import Sad from "./sad";
@@ -21,6 +21,8 @@ import SimpleBottomNavigation from "./footer";
 import ButtonAppBar from "./nav";
 import ProductCategories from "./home";
 import Footer from "./footer";
+import ProductHowItWorks from "./product";
+
 import Commuinty from "./commuinty";
 // import { Mood, Happy, Romantic, Tarab, Sarcastic, Workout } from "./mood";
 
@@ -36,7 +38,8 @@ class App extends Component {
           <Route path="/login" component={login} />
           <Route path="/signup" component={Signup} />
           <Route path="/profile" component={Profile} />
-          <Route path="/form" component={form} />
+          <Route path="/ProductHowItWorks" component={ProductHowItWorks} />
+
 
           
           {/* <Route path="/contactus" component={Contact} /> */}
@@ -48,7 +51,6 @@ class App extends Component {
           <Route path="/tarab" component={Tarab} />
           <Route path="/sarcastic" component={Sarcastic} />
           <Route path="/calm" component={Calm} />
-          
           <Route path="/workout" component={FriendsDrive} />
           <Route path="/pop" component={Pop} />
           <Footer />

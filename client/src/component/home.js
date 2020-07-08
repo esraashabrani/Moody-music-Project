@@ -5,6 +5,7 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import HomePageHeader from './homePageheader';
+import ProductHowItWorks from "./product";
 
 const styles = makeStyles((theme) => ({
   root: {
@@ -193,8 +194,13 @@ function ProductCategories(props) {
             </div>
           </ButtonBase>
         ))}
+       
+     
+
+       
       </div>
     </Container>
+    <ProductHowItWorks />
     </div>
   );
 }

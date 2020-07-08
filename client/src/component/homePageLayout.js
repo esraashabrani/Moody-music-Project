@@ -67,6 +67,7 @@ function HomeLayout(props) {
           alt="arrow down"
         />
       </Container>
+      
     </section>
   );
 }
