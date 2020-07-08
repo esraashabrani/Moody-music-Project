@@ -1,27 +1,28 @@
-import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
+import React from "react";
+import axios from "axios";
+import Avatar from "@material-ui/core/Avatar";
+import Button from "@material-ui/core/Button";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import TextField from "@material-ui/core/TextField";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
+import Link from "@material-ui/core/Link";
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
+      {"Copyright © "}
       <Link color="inherit" href="https://material-ui.com/">
         Your Website
-      </Link>{' '}
+      </Link>{" "}
       {new Date().getFullYear()}
-      {'.'}
+      {"."}
     </Typography>
   );
 }
@@ -29,16 +30,16 @@ function Copyright() {
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   },
   avatar: {
     margin: theme.spacing(1),
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
-    width: '100%', // Fix IE 11 issue.
+    width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(3),
   },
   submit: {
@@ -50,17 +51,44 @@ export default function SignUp() {
   const classes = useStyles();
 
   const [values, setValues] = React.useState({
-    firstName: '',
-    lastName: '',
-    Email:'',
-    password:'',
+    firstName: "",
+    lastName: "",
+    Email: "",
+    password: "",
   });
-
 
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
-  }; 
+  };
 
+  const onSubmit = (e) => {
+    e.preventDefault();
+    var firstName = document.getElementById("firstName").value;
+    var lastName = document.getElementById("lastName").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    const user = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      password: password,
+    };
+    axios
+      .post("http://localhost:6060/signup", user)
+      .then((res) => {
+        document.getElementById("accoutCreated").innerText =
+          "Account created Successfully! ";
+        // window.location = '/login'
+      })
+      .catch(
+        () =>
+          (document.getElementById("accoutCreated").innerText =
+            "The email is already exists! ")
+      );
+
+    //window.location = "/login"
+  };
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -71,12 +99,12 @@ export default function SignUp() {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} onSubmit={onSubmit} noValidate>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
-               value={values.firstName}
-               onChange={handleChange('firstName')}
+                value={values.firstName}
+                onChange={handleChange("firstName")}
                 autoComplete="fname"
                 name="firstName"
                 variant="outlined"
@@ -89,8 +117,8 @@ export default function SignUp() {
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
-               value={values.lastName}
-               onChange={handleChange('lastName')}
+                value={values.lastName}
+                onChange={handleChange("lastName")}
                 variant="outlined"
                 required
                 fullWidth
@@ -102,8 +130,8 @@ export default function SignUp() {
             </Grid>
             <Grid item xs={12}>
               <TextField
-               value={values.Email}
-               onChange={handleChange('Email')}
+                value={values.Email}
+                onChange={handleChange("Email")}
                 variant="outlined"
                 required
                 fullWidth
@@ -115,8 +143,8 @@ export default function SignUp() {
             </Grid>
             <Grid item xs={12}>
               <TextField
-               value={values.password}
-               onChange={handleChange('password')}
+                value={values.password}
+                onChange={handleChange("password")}
                 variant="outlined"
                 required
                 fullWidth
@@ -150,6 +178,9 @@ export default function SignUp() {
                 Already have an account? Sign in
               </Link>
             </Grid>
+            <Grid item>
+              <p id="accoutCreated"></p>
+            </Grid>
           </Grid>
         </form>
       </div>
@@ -158,4 +189,4 @@ export default function SignUp() {
       </Box>
     </Container>
   );
-}                            
+}

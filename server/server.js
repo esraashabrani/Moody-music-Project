@@ -38,7 +38,7 @@ app.use("",users);
 app.use("",songs)
 
 //populateData.saveSt();
-var port = 5050;
+var port = 6060;
 
 app.listen(port, function () {
   console.log(' listening on port ' + port);
