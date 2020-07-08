@@ -56,7 +56,7 @@ export default function Sarcastic() {
 
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
-    fetch("http://localhost:5050/sarcastic")
+    fetch("http://localhost:6060/sarcastic")
       .then((response) => response.json())
       .then((songs) => setSongs(songs));
 

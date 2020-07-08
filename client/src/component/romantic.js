@@ -56,7 +56,7 @@ export default function Romantic() {
 
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
-    fetch("http://localhost:5050/romantic")
+    fetch("http://localhost:6060/romantic")
       .then((response) => response.json())
       .then((songs) => setSongs(songs));
 

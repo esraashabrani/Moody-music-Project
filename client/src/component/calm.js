@@ -56,7 +56,7 @@ export default function Calm() {
 
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
-    fetch("http://localhost:5050/sad")
+    fetch("http://localhost:6060/sad")
       .then((response) => response.json())
       .then((songs) => setSongs(songs));
 

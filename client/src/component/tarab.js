@@ -56,7 +56,7 @@ export default function Tarab() {
 
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
-    fetch("http://localhost:5050/tarab")
+    fetch("http://localhost:6060/tarab")
       .then((response) => response.json())
       .then((songs) => setSongs(songs));
 

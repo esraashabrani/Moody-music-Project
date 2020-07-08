@@ -56,7 +56,7 @@ export default function FriendsDrive() {
 
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
-    fetch("http://localhost:5050/workout")
+    fetch("http://localhost:6060/workout")
       .then((response) => response.json())
       .then((songs) => setSongs(songs));
 
