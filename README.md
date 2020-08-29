@@ -29,7 +29,7 @@ https://www.youtube.com/watch?v=-12f4VDepb8
 
 ## Usage:
 
-You do not have to login/signup to use this app. However, without doing so, you will only get a notification at specific time. Once you get a notification, you will fill some information and submit.
+You do not have to login/signup to use this app. 
 
 ## Technologies:
 
